@@ -3,6 +3,10 @@
 ** Copyright Kepler Project 2003 - 2016 (http://keplerproject.github.io/luafilesystem)
 */
 
+#include <lua.h>
+#include <lualib.h>
+#include <lauxlib.h>
+
 /* Define 'chdir' for systems that do not implement it */
 #ifdef NO_CHDIR
   #define chdir(p)	(-1)
@@ -32,3 +36,12 @@ LFS_EXPORT  int luaopen_lfs (lua_State *L);
 #ifdef __cplusplus
 }
 #endif
+
+int file_info (lua_State *L);
+int change_dir (lua_State *L);
+int get_dir (lua_State *L);
+int make_dir (lua_State *L);
+int remove_dir (lua_State *L);
+int dir_iter_factory (lua_State *L);
+int file_utime (lua_State *L);
+int dir_create_meta (lua_State *L);
